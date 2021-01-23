@@ -10,7 +10,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  imageName: 'tuddy18/praxisreport-usermanagement'
+  imageName: 'tuddy18/praxisreport-profilemanagement'
   dockerHub: 'praxisreportcontainerregistry'
 
 stages:
