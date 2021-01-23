@@ -75,9 +75,6 @@ def update():
     entities = with_polymorphic(Profile, '*')
     profile = db.session().query(entities).filter_by(id=profile_json['id']).first()
 
-    # use this for non polymorphic query
-    # profile = Profile.query.filter_by(id=id).first()
-
     profile.update_from_dict(profile_json)
     db.session().commit()
     profile = db.session().query(entities).filter_by(id=profile.id).first()
