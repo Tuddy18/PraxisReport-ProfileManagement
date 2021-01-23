@@ -22,6 +22,9 @@ def create():
     db.session().add(profile)
     db.session().commit()
 
+    entities = with_polymorphic(Profile, '*')
+    profile = db.session().query(entities).filter_by(id=profile.id).first()
+
     resp = jsonify(profile.json_dict())
     return resp
 
@@ -76,10 +79,8 @@ def update():
     # profile = Profile.query.filter_by(id=id).first()
 
     profile.update_from_dict(profile_json)
-    # session = Session()
-    # session.add(profile)
-    # session.commit()
     db.session().commit()
+    profile = db.session().query(entities).filter_by(id=profile.id).first()
 
     resp = jsonify(profile.json_dict())
     return resp
