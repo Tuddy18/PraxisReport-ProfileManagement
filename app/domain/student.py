@@ -9,7 +9,7 @@ class StudentProfile(Profile):
     id = Column(Integer, ForeignKey('Profile.id'), primary_key=True)
 
     __mapper_args__ = {
-        'polymorphic_identity':'studentprofile',
+        'polymorphic_identity': 'studentprofile',
     }
 
     cetatenie = Column(String(120), nullable=True)
