@@ -18,4 +18,4 @@ class Profile(db.Model, JsonSerializable):
     }
 
     def __repr__(self):
-        return '<Profile [%r] %r - %r %r>' % (self.type, self.email, self.name)
+        return '<Profile [%r] %r - %r>' % (self.type, self.email, self.name)
