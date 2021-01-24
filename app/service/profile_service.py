@@ -5,6 +5,10 @@ from sqlalchemy.orm import with_polymorphic
 
 from app.domain.profile import *
 from app.domain.student import *
+from app.domain.mentor import *
+from app.domain.professor import *
+
+
 
 @app.route('/profile/create', methods=['POST'])
 def create():
@@ -14,6 +18,10 @@ def create():
         profile = Profile()
     elif profile_json["type"] == "studentprofile":
         profile = StudentProfile()
+    elif profile_json["type"] == "professorprofile":
+        profile = ProfessorProfile()
+    elif profile_json["type"] == "mentorprofile":
+        profile = MentorProfile()
     else:
         raise RuntimeError("unknown profile type")
 
