@@ -73,8 +73,13 @@ def get_by_email():
     # use this for non polymorphic query
     # profile = Profile.query.filter_by(email=email).first()
 
-    resp = jsonify(profile.json_dict())
-    return resp
+    if profile:
+        resp = jsonify(profile.json_dict())
+        return resp
+    else:
+        resp = jsonify(success=False)
+        resp.status_code = 404
+        return resp
 
 @app.route('/profile/update', methods=['PUT'])
 def update():
