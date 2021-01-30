@@ -65,7 +65,7 @@ def get_all():
 @app.route('/profile/get-by-email', methods=['POST'])
 def get_by_email():
     # Get Form Fields
-    email = request.form['email']
+    email = request.get_json()['email']
 
     entities = with_polymorphic(Profile, '*')
     profile = db.session().query(entities).filter_by(email=email).first()
