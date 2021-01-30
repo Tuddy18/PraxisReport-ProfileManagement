@@ -6,7 +6,7 @@ from app.domain.json_serializable import JsonSerializable
 class Profile(db.Model, JsonSerializable):
     __tablename__ = 'Profile'
     id = Column(Integer, primary_key=True)
-    email = Column(String(120))
+    email = Column(String(120), unique=True)
     name = Column(String(120))
     phone = Column(String(120), nullable=True)
 

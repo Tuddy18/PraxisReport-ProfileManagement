@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77a127a3-f422-471a-8f95-c0aa763b199b" name="Default Changelist" comment="fixed empty jsonify response">
-      <change afterPath="$PROJECT_DIR$/.idea/PraxisReport-ProfileManagement.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/domain/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/__init__.py" afterDir="false" />
+    <list default="true" id="77a127a3-f422-471a-8f95-c0aa763b199b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/domain/profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/profile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +124,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611513094760</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="imported prof and mentor">
+      <created>1611515572865</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1611515572865</updated>
+    </task>
+    <task id="LOCAL-00009" summary="imported prof and mentor">
+      <created>1611516039854</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1611516039854</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -141,57 +149,58 @@
     <MESSAGE value="added whitespace" />
     <MESSAGE value="removed student profile constructor" />
     <MESSAGE value="added mentor and professor profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="added mentor and professor profile" />
+    <MESSAGE value="imported prof and mentor" />
+    <option name="LAST_COMMIT_MESSAGE" value="imported prof and mentor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1611412644789">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1611412644789" />
-    <state x="595" y="16" width="945" height="913" key="CommitChangelistDialog2" timestamp="1611513093710">
+    <state x="595" y="16" width="945" height="913" key="CommitChangelistDialog2" timestamp="1611516039122">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="595" y="16" width="945" height="913" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1611513093710" />
+    <state x="595" y="16" width="945" height="913" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1611516039122" />
     <state x="182" y="97" key="DiffContextDialog" timestamp="1611415124227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="182" y="97" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1611415124227" />
-    <state width="1899" height="341" key="GridCell.Tab.0.bottom" timestamp="1611515538813">
+    <state width="1899" height="341" key="GridCell.Tab.0.bottom" timestamp="1612013939933">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="341" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1611515538813" />
-    <state width="1899" height="341" key="GridCell.Tab.0.center" timestamp="1611515538813">
+    <state width="1899" height="341" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612013939933" />
+    <state width="1899" height="341" key="GridCell.Tab.0.center" timestamp="1612013939933">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="341" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1611515538813" />
-    <state width="1899" height="341" key="GridCell.Tab.0.left" timestamp="1611515538813">
+    <state width="1899" height="341" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612013939933" />
+    <state width="1899" height="341" key="GridCell.Tab.0.left" timestamp="1612013939933">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="341" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1611515538813" />
-    <state width="1899" height="341" key="GridCell.Tab.0.right" timestamp="1611515538813">
+    <state width="1899" height="341" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612013939933" />
+    <state width="1899" height="341" key="GridCell.Tab.0.right" timestamp="1612013939933">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="341" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1611515538813" />
-    <state width="1899" height="341" key="GridCell.Tab.1.bottom" timestamp="1611515539341">
+    <state width="1899" height="341" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612013939933" />
+    <state width="1899" height="341" key="GridCell.Tab.1.bottom" timestamp="1612013939135">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="341" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1611515539341" />
-    <state width="1899" height="341" key="GridCell.Tab.1.center" timestamp="1611515539341">
+    <state width="1899" height="341" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612013939135" />
+    <state width="1899" height="341" key="GridCell.Tab.1.center" timestamp="1612013939134">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="341" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1611515539341" />
-    <state width="1899" height="341" key="GridCell.Tab.1.left" timestamp="1611515539341">
+    <state width="1899" height="341" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612013939134" />
+    <state width="1899" height="341" key="GridCell.Tab.1.left" timestamp="1612013939134">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="341" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1611515539341" />
-    <state width="1899" height="341" key="GridCell.Tab.1.right" timestamp="1611515539341">
+    <state width="1899" height="341" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612013939134" />
+    <state width="1899" height="341" key="GridCell.Tab.1.right" timestamp="1612013939134">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="341" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1611515539341" />
-    <state x="552" y="242" key="Vcs.Push.Dialog.v2" timestamp="1611513096358">
+    <state width="1899" height="341" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612013939134" />
+    <state x="552" y="242" key="Vcs.Push.Dialog.v2" timestamp="1611516045747">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="242" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1611513096358" />
+    <state x="552" y="242" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1611516045747" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1611492553163">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -209,10 +218,6 @@
           <url>file://$PROJECT_DIR$/app/__init__.py</url>
           <line>17</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/domain/__init__.py</url>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
