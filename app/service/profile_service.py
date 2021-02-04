@@ -5,12 +5,7 @@ from flask import request, render_template, flash, redirect, url_for, session, j
 from passlib.hash import sha256_crypt
 from sqlalchemy.orm import with_polymorphic
 
-from app.domain.profile import *
-from app.domain.student import *
-from app.domain.mentor import *
-from app.domain.professor import *
-
-
+from app.domain import *
 
 @app.route('/profile/create', methods=['POST'])
 @jwt_required
@@ -25,6 +20,8 @@ def create():
         profile = ProfessorProfile()
     elif profile_json["type"] == "mentorprofile":
         profile = MentorProfile()
+    elif profile_json["type"] == "secretaryprofile":
+        profile = SecretaryProfile()
     else:
         raise RuntimeError("unknown profile type")
 
