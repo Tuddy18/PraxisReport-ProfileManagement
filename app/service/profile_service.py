@@ -1,4 +1,4 @@
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from app import app
 from flask import request, render_template, flash, redirect, url_for, session, jsonify
@@ -71,7 +71,8 @@ def get_all():
 @jwt_required
 def get_by_email():
     # Get Form Fields
-    email = request.get_json()['email']
+    # email = request.get_json()['email']
+    email = get_jwt_identity()
 
     entities = with_polymorphic(Profile, '*')
     profile = db.session().query(entities).filter_by(email=email).first()
