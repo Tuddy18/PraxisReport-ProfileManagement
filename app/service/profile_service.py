@@ -1,3 +1,5 @@
+from flask_jwt_extended import jwt_required
+
 from app import app
 from flask import request, render_template, flash, redirect, url_for, session, jsonify
 from passlib.hash import sha256_crypt
@@ -11,6 +13,7 @@ from app.domain.professor import *
 
 
 @app.route('/profile/create', methods=['POST'])
+@jwt_required
 def create():
     profile_json = request.get_json()
 
@@ -38,6 +41,7 @@ def create():
 
 
 @app.route('/profile/get-by-id', methods=['GET'])
+@jwt_required
 def get_by_id():
     id = request.args.get('id', type=int)
 
@@ -51,6 +55,7 @@ def get_by_id():
     return resp
 
 @app.route('/profile/get-all', methods=['GET'])
+@jwt_required
 def get_all():
     entities = with_polymorphic(Profile, '*')
     profiles = db.session().query(entities).all()
@@ -63,6 +68,7 @@ def get_all():
 
 
 @app.route('/profile/get-by-email', methods=['POST'])
+@jwt_required
 def get_by_email():
     # Get Form Fields
     email = request.get_json()['email']
@@ -82,6 +88,7 @@ def get_by_email():
         return resp
 
 @app.route('/profile/update', methods=['PUT'])
+@jwt_required
 def update():
     profile_json = request.get_json()
 
@@ -96,6 +103,7 @@ def update():
     return resp
 
 @app.route('/profile/delete', methods=['DELETE'])
+@jwt_required
 def delete():
     id = request.args.get('id', type=int)
 
