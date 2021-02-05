@@ -1,15 +1,27 @@
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
-from app import app
+from app import app, auto
 from flask import request, render_template, flash, redirect, url_for, session, jsonify
 from passlib.hash import sha256_crypt
 from sqlalchemy.orm import with_polymorphic
 
 from app.domain import *
 
+@app.route('/doc')
+@auto.doc()
+def documentation():
+    '''
+    return API documentation page
+    '''
+    return auto.html()
+
 @app.route('/profile/create', methods=['POST'])
+@auto.doc(args=['user identity (JWT_token)', 'profile (json)'])
 @jwt_required
 def create():
+    '''
+    Creates a new profile based on a json
+    '''
     profile_json = request.get_json()
 
     if profile_json["type"] == "profifle":
@@ -52,8 +64,12 @@ def get_by_id():
     return resp
 
 @app.route('/profile/get-all', methods=['GET'])
+@auto.doc(args=['user identity (JWT_token)'])
 @jwt_required
 def get_all():
+    '''
+    Get all profiles
+    '''
     entities = with_polymorphic(Profile, '*')
     profiles = db.session().query(entities).all()
 
@@ -65,8 +81,12 @@ def get_all():
 
 
 @app.route('/profile/get-by-email', methods=['POST'])
+@auto.doc(args=['user identity (JWT_token)'])
 @jwt_required
 def get_by_email():
+    '''
+    Returns the user profile based on the user identity
+    '''
     # Get Form Fields
     # email = request.get_json()['email']
     email = get_jwt_identity()
@@ -86,8 +106,12 @@ def get_by_email():
         return resp
 
 @app.route('/profile/update', methods=['PUT'])
+@auto.doc(args=['user identity (JWT_token)', 'profile (json)'])
 @jwt_required
 def update():
+    '''
+    Updates the profile
+    '''
     profile_json = request.get_json()
 
     entities = with_polymorphic(Profile, '*')
@@ -101,8 +125,12 @@ def update():
     return resp
 
 @app.route('/profile/delete', methods=['DELETE'])
+@auto.doc(args=['user identity (JWT_token)', 'id'])
 @jwt_required
 def delete():
+    '''
+    Deletes the profile
+    '''
     id = request.args.get('id', type=int)
 
     entities = with_polymorphic(Profile, '*')
