@@ -79,8 +79,7 @@ def get_all():
     resp = jsonify([profile.json_dict() for profile in profiles])
     return resp
 
-
-@app.route('/profile/get-by-email', methods=['POST'])
+@app.route('/profile/get-by-email', methods=['GET'])
 @auto.doc(args=['user identity (JWT_token)'])
 @jwt_required
 def get_by_email():
@@ -90,6 +89,31 @@ def get_by_email():
     # Get Form Fields
     # email = request.get_json()['email']
     email = get_jwt_identity()
+
+    entities = with_polymorphic(Profile, '*')
+    profile = db.session().query(entities).filter_by(email=email).first()
+
+    # use this for non polymorphic query
+    # profile = Profile.query.filter_by(email=email).first()
+
+    if profile:
+        resp = jsonify(profile.json_dict())
+        return resp
+    else:
+        resp = jsonify(success=False)
+        resp.status_code = 404
+        return resp
+
+@app.route('/profile/get-by-email', methods=['POST'])
+@auto.doc(args=['user identity (JWT_token)', 'profile email'])
+@jwt_required
+def post_by_email():
+    '''
+    Returns the user profile based on the user identity
+    '''
+    # Get Form Fields
+    email = request.get_json()['email']
+    # email = get_jwt_identity()
 
     entities = with_polymorphic(Profile, '*')
     profile = db.session().query(entities).filter_by(email=email).first()
